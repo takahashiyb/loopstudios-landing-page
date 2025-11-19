@@ -1,6 +1,10 @@
 :root {
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
+  --grey-200: rgb(216, 216, 216);
+  --blue-100: rgb(229, 234, 241);
+  --blue-050: rgb(246, 250, 255);
+  --gradient-1: linear-gradient(var(--white), var(--grey-200));
 
   --background-color: --black;
   --text-color: --white;

@@ -1,4 +1,4 @@
-@use "../util";
+@use "../util" as u;
 
 html {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: util.$font;
+  font-family: u.$font1;
   background-color: var(--background-color);
   color: var(--text-color);
 }

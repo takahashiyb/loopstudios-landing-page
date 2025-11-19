@@ -6,3 +6,8 @@
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+body {
+  background-image: var(--gradient-1);
+  background-repeat: no-repeat;
+}

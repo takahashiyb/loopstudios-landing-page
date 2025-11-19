@@ -1,5 +1,16 @@
 @use "../util/" as u;
 
+:root {
+  --font-1: 300 u.rem(72) / 1 @font1;
+  --font-2: 300 u.rem(48) / 1 @font1;
+  --font-3: 300 u.rem(40) / 1 @font1;
+  --font-4: 300 u.rem(32) / 1 @font1;
+  --font-5: 300 u.rem(24) / 1 @font1;
+  --font-6: 300 u.rem(15) / 1.65 @font2;
+  --font-7: 300 u.rem(14) / 1 @font2;
+  --font-7-letterspacing: u.em(5);
+}
+
 h1,
 h2,
 h3 {
@@ -21,8 +32,6 @@ p {
   font-size: u.rem(16);
 }
 
-a,
-a:visited,
-a:active {
+a {
   text-decoration: none;
 }
