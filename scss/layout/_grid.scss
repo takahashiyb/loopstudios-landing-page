@@ -1,5 +1,10 @@
 @use "../util/" as u;
 
+body {
+  display: grid;
+  row-gap: calc(2 * var(--spacing-1000));
+}
+
 .grid {
   --space-lr: var(--spacing-0500);
   --space-gap: 20px;
@@ -216,22 +221,26 @@
 
     @include u.breakpoint(large) {
       overflow: visible;
-      grid-template-rows: repeat(8, calc((100% - (12px * 7)) / 8));
-      row-gap: 12px;
+      grid-template-rows: 1fr min-content;
 
-      --col-count: 12;
+      --col-count: 8;
       --space-gap: 30px;
 
       .image {
         grid-row: 1/-1;
-        grid-column: 2/9;
+        grid-column: 2/6;
       }
       .text-content {
-        grid-column: 7/-2;
-        grid-row: 3/-1;
-        display: grid;
-        padding: var(--spacing-1000) 0 0 var(--spacing-1000);
-
+        grid-column: 5/-2;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        padding-top: var(--spacing-1000);
+        padding-left: var(--spacing-1000);
+        align-items: end;
+        justify-content: flex-end;
+        justify-items: flex-end;
+        row-gap: var(--spacing-0300);
         * {
           margin: 0;
         }
