@@ -1,13 +1,13 @@
 @use "../util/" as u;
 
 :root {
-  --font-1: 300 u.rem(72) / 1 @font1;
-  --font-2: 300 u.rem(48) / 1 @font1;
-  --font-3: 300 u.rem(40) / 1 @font1;
-  --font-4: 300 u.rem(32) / 1 @font1;
-  --font-5: 300 u.rem(24) / 1 @font1;
-  --font-6: 300 u.rem(15) / 1.65 @font2;
-  --font-7: 300 u.rem(14) / 1 @font2;
+  --font-1: #{300 u.rem(72)}/#{1} #{u.$font1};
+  --font-2: #{300 u.rem(48)}/#{1} #{u.$font1};
+  --font-3: #{300 u.rem(40)}/#{1} #{u.$font1};
+  --font-4: #{300 u.rem(32)}/#{1} #{u.$font1};
+  --font-5: #{300 u.rem(24)}/#{1} #{u.$font1};
+  --font-6: #{400 u.rem(15)}/#{1.65} #{u.$font2};
+  --font-7: #{400 u.rem(14)}/#{1} #{u.$font2};
   --font-7-letterspacing: u.em(5);
 }
 
@@ -34,4 +34,10 @@ p {
 
 a {
   text-decoration: none;
+  font: var(--font-5);
+  color: var(--white);
+
+  @include u.breakpoint(large) {
+    font: var(--font-6);
+  }
 }

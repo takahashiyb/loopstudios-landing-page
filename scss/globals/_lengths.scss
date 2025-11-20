@@ -1,13 +1,13 @@
 @use "../util/" as u;
 
-root {
-  --spacing-0000: u.em(0);
-  --spacing-0100: u.em(8);
-  --spacing-0200: u.em(16);
-  --spacing-0300: u.em(24);
-  --spacing-0400: u.em(32);
-  --spacing-0500: u.em(40);
-  --spacing-0600: u.em(48);
-  --spacing-0800: u.em(64);
-  --spacing-1000: u.em(80);
+:root {
+  --spacing-0000: #{u.em(0)};
+  --spacing-0100: #{u.em(8)};
+  --spacing-0200: #{u.em(16)};
+  --spacing-0300: #{u.em(24)};
+  --spacing-0400: #{u.em(32)};
+  --spacing-0500: #{u.em(40)};
+  --spacing-0600: #{u.em(48)};
+  --spacing-0800: #{u.em(64)};
+  --spacing-1000: #{u.em(80)};
 }

@@ -1,0 +1,24 @@
+@use "../util/" as u;
+
+.grid__navbar {
+  background-color: var(--black);
+
+  @include u.breakpoint("large") {
+    a {
+      position: relative;
+    }
+
+    a:hover::after,
+    a:active::after,
+    a:focus::after {
+      display: block;
+      content: "";
+      width: var(--spacing-0300);
+      height: 2px;
+      background-color: var(--white);
+      position: absolute;
+      left: 50%;
+      translate: -50%;
+    }
+  }
+}

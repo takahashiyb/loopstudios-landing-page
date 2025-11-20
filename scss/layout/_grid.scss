@@ -1,5 +1,34 @@
 @use "../util/" as u;
 
+body {
+  --space-lr: 40px;
+  --space-gap: 20px;
+  --col-count: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr repeat(
+      var(--col-count),
+      calc(
+        (
+            min(100% - var(--space-lr), 69.375rem) - (var(--col-count) - 1) *
+              var(--space-gap)
+          ) / var(--col-count)
+      )
+    )
+    1fr;
+  gap: var(--space-gap);
+
+  @include u.breakpoint(medium) {
+    --space-lr: var(--spacing-1000);
+    --col-count: 6;
+  }
+
+  // @include u.breakpoint(large) {
+  // }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -28,6 +57,46 @@
 
     @include u.breakpoint("large") {
       text-align: left;
+    }
+  }
+
+  &__navbar {
+    grid-column: 2/-2;
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: min-content 1fr 1fr;
+
+    div:first-child {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      img:last-child {
+        justify-self: end;
+      }
+    }
+
+    div:last-child {
+      display: grid;
+      align-items: last baseline;
+      align-content: end;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-0300);
+    }
+
+    @include u.breakpoint("large") {
+      grid-template-columns: 1fr 1fr;
+      height: min-content;
+
+      div:last-child {
+        display: flex;
+        gap: var(--spacing-0400);
+        justify-content: flex-end;
+      }
+
+      div:first-child img:last-child {
+        display: none;
+      }
     }
   }
 }
