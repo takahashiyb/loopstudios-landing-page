@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 :root {
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
@@ -6,6 +8,23 @@
   --blue-050: rgb(246, 250, 255);
   --gradient-1: linear-gradient(var(--white), var(--grey-200));
 
-  --background-color: --black;
   --text-color: --white;
+}
+
+.bg-black {
+  --background-color: var(--black);
+
+  background-color: var(--background-color);
+
+  &.navigation {
+    @include u.breakpoint("large") {
+      background-color: transparent;
+    }
+  }
+}
+
+.bg-white {
+  --background-color: var(--white);
+
+  background-color: var(--background-color);
 }

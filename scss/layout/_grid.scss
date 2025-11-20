@@ -1,9 +1,9 @@
 @use "../util/" as u;
 
-body {
+.grid {
   --space-lr: 40px;
   --space-gap: 20px;
-  --col-count: 2;
+  --col-count: 1;
 
   display: grid;
 
@@ -18,143 +18,106 @@ body {
       )
     )
     1fr;
-  gap: var(--space-gap);
+  column-gap: var(--space-gap);
 
   @include u.breakpoint(medium) {
     --space-lr: var(--spacing-1000);
-    --col-count: 6;
   }
 
-  // @include u.breakpoint(large) {
-  // }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: u.rem(40);
-  width: min(100% - u.rem(20), u.rem(1000));
-  margin-inline: auto;
-
-  @include u.breakpoint(large) {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-  }
-
-  &__main,
-  &__sidebar {
-    padding: u.rem(40);
-  }
-
-  &__main {
-    background-color: hsl(240, 100%, 31%);
-  }
-
-  &__sidebar {
-    background-color: hsl(300, 100%, 25%);
-    text-align: center;
-
-    @include u.breakpoint("large") {
-      text-align: left;
-    }
-  }
-
-  &__navbar {
-    grid-column: 2/-2;
-    display: grid;
+  &__navigation {
     height: 100dvh;
     grid-template-rows: min-content 1fr 1fr;
+    align-items: end;
 
-    div:first-child {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-
-      img:last-child {
-        justify-self: end;
-      }
-    }
-
-    div:last-child {
-      display: grid;
-      align-items: last baseline;
-      align-content: end;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-0300);
-    }
-
-    @include u.breakpoint("large") {
-      grid-template-columns: 1fr 1fr;
+    @include u.breakpoint(large) {
+      --col-count: 2;
       height: min-content;
+      background-color: transparent;
+    }
+  }
 
-      div:last-child {
-        display: flex;
-        gap: var(--spacing-0400);
-        justify-content: flex-end;
-      }
+  &__logo,
+  &__navbar {
+    grid-column: 2;
+    display: grid;
+  }
 
-      div:first-child img:last-child {
+  &__logo {
+    grid-template-columns: repeat(2, min-content);
+    justify-content: space-between;
+
+    @include u.breakpoint(large) {
+      grid-column: 2/3;
+
+      :last-child {
         display: none;
       }
     }
   }
 
-  &__footer {
-    grid-column: 2/-2;
-    display: grid;
-    justify-content: center;
-    gap: var(--spacing-0500);
+  &__navbar {
+    gap: var(--spacing-0300);
 
-    > div {
-      display: grid;
+    @include u.breakpoint(large) {
+      grid-column: 3/4;
+      grid-template-columns: repeat(5, min-content);
+      justify-content: end;
+    }
+  }
+
+  &__footer {
+    row-gap: var(--spacing-0500);
+    padding-top: var(--spacing-0600);
+    padding-bottom: var(--spacing-0600);
+    @include u.breakpoint(medium) {
+      --col-count: 2;
+    }
+  }
+
+  &__footer-logo,
+  &__footer-nav,
+  &__socials,
+  &__footer-copyright {
+    grid-column: 2;
+    display: grid;
+    justify-items: center;
+  }
+
+  &__footer-logo {
+    @include u.breakpoint(medium) {
+      grid-column: 2;
+      grid-row: 1;
+      justify-content: start;
     }
   }
 
   &__footer-nav {
+    display: grid;
     gap: var(--spacing-0200);
-    justify-content: center;
+    @include u.breakpoint(medium) {
+      grid-column: 2;
+      grid-row: 2;
+      justify-content: start;
+      grid-template-columns: repeat(5, min-content);
+    }
   }
 
   &__socials {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, min-content);
+    justify-content: center;
     gap: var(--spacing-0200);
-    justify-content: flex-end;
+    @include u.breakpoint(medium) {
+      grid-column: 3;
+      grid-row: 1;
+      justify-content: end;
+    }
   }
 
-  p {
-    display: inline;
-  }
-
-  @include u.breakpoint("medium") {
-    &__footer {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: min-content min-content;
-    }
-
-    &__footer-logo {
-      grid-column: 1/2;
-      grid-row: 1/2;
-      justify-self: start;
-    }
-
-    &__footer-nav {
-      grid-column: 1/2;
-      grid-row: 2/3;
-      grid-template-columns: repeat(5, min-content);
-      justify-self: start;
-    }
-
-    &__socials {
-      grid-column: 2/3;
-      grid-row: 1/2;
-      justify-self: end;
-    }
-
-    &__footer-copyright {
-      grid-column: 2/3;
-      grid-row: 2/3;
-      justify-self: end;
+  &__footer-copyright {
+    @include u.breakpoint(medium) {
+      grid-column: 3;
+      grid-row: 2;
+      justify-content: end;
     }
   }
 }

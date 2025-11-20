@@ -13,20 +13,28 @@
     />
 
     <link rel="stylesheet" href="../dist/style.css" />
+
+    <style>
+      body {
+        background-color: blue;
+      }
+    </style>
   </head>
   <body>
-    <section class="grid__navbar">
-      <div>
-        <img src="../images/logo.svg" alt="logo company" />
-        <img src="../images/icon-close.svg" alt="icon close" />
-      </div>
+    <section class="bg-black navigation">
+      <div class="grid grid__navigation">
+        <div class="grid__logo">
+          <img src="../images/logo.svg" alt="logo company" />
+          <img src="../images/icon-close.svg" alt="icon close" />
+        </div>
 
-      <div role="navigation">
-        <a href="#about">ABOUT</a>
-        <a href="#careers">CAREERS</a>
-        <a href="#events">EVENTS</a>
-        <a href="#products">PRODUCTS</a>
-        <a href="#support">SUPPORT</a>
+        <div role="navigation" class="nav-links grid__navbar">
+          <a href="#about">ABOUT</a>
+          <a href="#careers">CAREERS</a>
+          <a href="#events">EVENTS</a>
+          <a href="#products">PRODUCTS</a>
+          <a href="#support">SUPPORT</a>
+        </div>
       </div>
     </section>
   </body>

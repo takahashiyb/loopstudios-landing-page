@@ -4,6 +4,12 @@
   background-color: var(--black);
 
   @include u.breakpoint("large") {
+    background-color: transparent;
+  }
+}
+
+.nav-links {
+  @include u.breakpoint("large") {
     a {
       position: relative;
     }
