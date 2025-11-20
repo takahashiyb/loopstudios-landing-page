@@ -1,7 +1,7 @@
 @use "../util/" as u;
 
 .grid {
-  --space-lr: 40px;
+  --space-lr: var(--spacing-0500);
   --space-gap: 20px;
   --col-count: 1;
 
@@ -12,7 +12,7 @@
       var(--col-count),
       calc(
         (
-            min(100% - var(--space-lr), 69.375rem) - (var(--col-count) - 1) *
+            min(100% - var(--space-lr), 90em) - (var(--col-count) - 1) *
               var(--space-gap)
           ) / var(--col-count)
       )
@@ -24,45 +24,20 @@
     --space-lr: var(--spacing-1000);
   }
 
-  &__navigation {
+  &__menu {
     height: 100dvh;
     grid-template-rows: min-content 1fr 1fr;
     align-items: end;
-
-    @include u.breakpoint(large) {
-      --col-count: 2;
-      height: min-content;
-      background-color: transparent;
-    }
   }
 
   &__logo,
-  &__navbar {
+  &__menubar {
     grid-column: 2;
     display: grid;
   }
 
-  &__logo {
-    grid-template-columns: repeat(2, min-content);
-    justify-content: space-between;
-
-    @include u.breakpoint(large) {
-      grid-column: 2/3;
-
-      :last-child {
-        display: none;
-      }
-    }
-  }
-
-  &__navbar {
+  &__menubar {
     gap: var(--spacing-0300);
-
-    @include u.breakpoint(large) {
-      grid-column: 3/4;
-      grid-template-columns: repeat(5, min-content);
-      justify-content: end;
-    }
   }
 
   &__footer {
@@ -118,6 +93,149 @@
       grid-column: 3;
       grid-row: 2;
       justify-content: end;
+    }
+  }
+
+  &__hero-section {
+    --tb-spacing: var(--spacing-0300);
+
+    grid-template-rows: var(--tb-spacing) repeat(
+        3,
+        calc(100% / 3) var(--tb-spacing)
+      );
+
+    @include u.breakpoint(medium) {
+      --tb-spacing: var(--spacing-0800);
+    }
+
+    @include u.breakpoint(large) {
+      --tb-spacing: var(--spacing-0800);
+      grid-template-rows: var(--tb-spacing) min-content 1fr var(--tb-spacing);
+    }
+  }
+
+  &__hero-image {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .navigation {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  &__navigation {
+    display: grid;
+    justify-content: stretch;
+
+    @include u.breakpoint(large) {
+      --col-count: 2;
+      height: min-content;
+      background-color: transparent;
+
+      button {
+        display: none;
+      }
+    }
+  }
+
+  &__logo,
+  &__navbar {
+    grid-column: 2;
+    display: grid;
+  }
+
+  &__logo {
+    grid-template-columns: repeat(2, min-content);
+    justify-content: space-between;
+    grid-column: 1;
+
+    @include u.breakpoint(large) {
+      .button__menu {
+        display: none;
+      }
+    }
+  }
+
+  &__navbar {
+    display: none;
+
+    @include u.breakpoint(large) {
+      display: grid;
+      gap: var(--spacing-0300);
+      grid-column: 3/4;
+      grid-template-columns: repeat(5, min-content);
+      justify-content: end;
+    }
+  }
+
+  &__hero-text {
+    grid-column: 2;
+    grid-row: 3;
+    display: grid;
+    align-items: center;
+    align-self: center;
+
+    padding: min(var(--spacing-0200)) var(--spacing-0300);
+    border: 1px solid var(--white);
+
+    @include u.breakpoint(medium) {
+      padding: var(--spacing-0500) var(--spacing-0500);
+    }
+
+    @include u.breakpoint(large) {
+      grid-row: 3;
+      max-width: 650px;
+    }
+
+    .hero-text {
+      margin: 0;
+    }
+  }
+
+  &__company-history {
+    row-gap: var(--spacing-0600);
+
+    .image {
+      grid-column: 2;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+    .text-content {
+      grid-column: 2;
+      padding-inline: var(--spacing-0300);
+    }
+
+    @include u.breakpoint(large) {
+      overflow: visible;
+      grid-template-rows: repeat(8, calc((100% - (12px * 7)) / 8));
+      row-gap: 12px;
+
+      --col-count: 12;
+      --space-gap: 30px;
+
+      .image {
+        grid-row: 1/-1;
+        grid-column: 2/9;
+      }
+      .text-content {
+        grid-column: 7/-2;
+        grid-row: 3/-1;
+        display: grid;
+        padding: var(--spacing-1000) 0 0 var(--spacing-1000);
+
+        * {
+          margin: 0;
+        }
+      }
     }
   }
 }

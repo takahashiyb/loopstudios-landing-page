@@ -15,16 +15,23 @@
   --background-color: var(--black);
 
   background-color: var(--background-color);
-
-  &.navigation {
-    @include u.breakpoint("large") {
-      background-color: transparent;
-    }
-  }
 }
 
 .bg-white {
   --background-color: var(--white);
 
   background-color: var(--background-color);
+}
+
+.button__menu {
+  background-color: transparent;
+  border: none;
+}
+
+.hero-text {
+  color: var(--white);
+}
+
+.company-history .text-content {
+  background-color: var(--white);
 }

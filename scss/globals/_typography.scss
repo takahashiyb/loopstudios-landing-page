@@ -43,7 +43,36 @@ a {
   }
 }
 
-.footer-copyright a,
-.footer-nav a {
+.navigation a,
+footer a,
+.company-history p {
   font: var(--font-6);
+}
+
+.company-history p {
+  text-align: center;
+}
+
+h1 {
+  font: var(--font-4);
+  text-transform: uppercase;
+
+  @include u.breakpoint(small) {
+    font: var(--font-3);
+  }
+
+  @include u.breakpoint(medium) {
+    font: var(--font-1);
+  }
+}
+
+h2 {
+  font: var(--font-4);
+  text-transform: uppercase;
+
+  text-align: center;
+
+  @include u.breakpoint(medium) {
+    font: var(--font-2);
+  }
 }

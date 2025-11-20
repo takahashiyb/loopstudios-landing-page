@@ -30,22 +30,68 @@
     </style>
   </head>
   <body>
-    <!-- <section class="bg-black navigation">
-      <div class="grid grid__navigation">
-        <div class="grid__logo">
-          <img src="../images/logo.svg" alt="logo company" />
-          <img src="../images/icon-close.svg" alt="icon close" />
+    <section class="hero">
+      <div class="grid grid__hero-section">
+        <div class="grid__hero-image">
+          <picture>
+            <source
+              media="(min-width:1023px)"
+              srcset="./images/desktop/image-hero.jpg"
+            />
+            <img src="./images/mobile/image-hero.jpg" alt="" />
+          </picture>
         </div>
+        <section class="navigation">
+          <div class="grid__navigation">
+            <div class="grid__logo">
+              <img src="../images/logo.svg" alt="logo company" />
 
-        <div role="navigation" class="nav-links grid__navbar">
-          <a href="#about">ABOUT</a>
-          <a href="#careers">CAREERS</a>
-          <a href="#events">EVENTS</a>
-          <a href="#products">PRODUCTS</a>
-          <a href="#support">SUPPORT</a>
+              <button class="button__menu">
+                <img src="../images/icon-hamburger.svg" alt="" />
+              </button>
+            </div>
+
+            <div role="navigation" class="nav-links grid__navbar">
+              <a href="#about">ABOUT</a>
+              <a href="#careers">CAREERS</a>
+              <a href="#events">EVENTS</a>
+              <a href="#products">PRODUCTS</a>
+              <a href="#support">SUPPORT</a>
+            </div>
+          </div>
+        </section>
+        <div class="grid__hero-text">
+          <h1 class="hero-text">Immersive exh1eriences that deliver</h1>
         </div>
       </div>
-    </section> -->
+    </section>
+
+    <section class="company-history">
+      <div class="grid grid__company-history">
+        <div class="image">
+          <picture>
+            <source
+              srcset="./images/desktop/image-interactive.jpg"
+              media="(min-width: 767px)"
+            />
+            <img
+              src="./images/mobile/image-interactive.jpg"
+              alt="image of someone having fun playing vr"
+            />
+          </picture>
+        </div>
+        <div class="text-content">
+          <h2>The leader in interactive VR</h2>
+          <p>
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="bg-black">
       <div class="grid grid__footer">
         <div class="grid__footer-logo">
