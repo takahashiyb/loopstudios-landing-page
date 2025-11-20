@@ -1,13 +1,20 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
+// .attribution {
+//   font-size: 11px;
+//   text-align: center;
+// }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
+// .attribution a {
+//   color: hsl(228, 45%, 44%);
+// }
 
-body {
-  background-image: var(--gradient-1);
-  background-repeat: no-repeat;
+// body {
+//   background-image: var(--gradient-1);
+//   background-repeat: no-repeat;
+// }
+
+footer {
+  --text-color: var(--white);
+
+  background-color: black;
+  color: var(--text-color);
 }
