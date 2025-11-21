@@ -50,6 +50,7 @@ main {
     grid-column: 2;
     display: grid;
     justify-items: center;
+    align-items: baseline;
   }
 
   &__footer-logo {
@@ -80,9 +81,15 @@ main {
       grid-row: 1;
       justify-content: end;
     }
+
+    a img {
+      display: block;
+    }
   }
 
   &__footer-copyright {
+    word-wrap: break-word;
+
     @include u.breakpoint(medium) {
       grid-column: 3;
       grid-row: 2;
@@ -256,6 +263,10 @@ main {
       padding: var(--spacing-0200) var(--spacing-0500);
     }
 
+    .see-all-button-header {
+      display: none;
+    }
+
     @include u.breakpoint(large) {
       --col-count: 2;
       grid-template-rows: min-content 1fr;
@@ -267,6 +278,11 @@ main {
       }
 
       .see-all-button {
+        display: none;
+      }
+
+      .see-all-button-header {
+        display: block;
         grid-row: 1;
         grid-column: 3;
         justify-self: end;
@@ -287,13 +303,13 @@ main {
   &__menu {
     height: 100dvh;
     width: 100vw;
-    grid-template-rows: min-content repeat(2, 1fr);
+    grid-template-rows: min-content repeat(3, 1fr);
     align-items: end;
     border: none;
     padding-top: var(--spacing-0500);
 
     @include u.breakpoint(medium) {
-      grid-template-rows: min-content repeat(3, 1fr);
+      grid-template-rows: min-content repeat(4, 1fr);
     }
   }
 
@@ -310,8 +326,9 @@ main {
   }
 
   &__menubar {
-    grid-row: 2;
+    grid-row: 3;
     gap: var(--spacing-0300);
+    justify-items: start;
 
     @include u.breakpoint(medium) {
       grid-row: 3;

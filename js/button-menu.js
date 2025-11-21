@@ -26,3 +26,17 @@ buttonClose.addEventListener("click", () => {
 
   dialog.close();
 });
+
+const mediaQuery = window.matchMedia("(min-width: 1023px)");
+
+function handleChange(e) {
+  if (e.matches && dialog.open) {
+    body.classList.remove("no-scroll");
+    main.removeAttribute("inert");
+    footer.removeAttribute("inert");
+
+    dialog.close();
+  }
+}
+
+mediaQuery.addEventListener("change", handleChange);

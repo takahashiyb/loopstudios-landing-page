@@ -1,0 +1,12 @@
+.button {
+  &__all-products {
+    outline: none;
+    transition: 0.3s;
+  }
+
+  &__all-products:hover,
+  &__all-products:active,
+  &__all-products:focus {
+    box-shadow: 4px 4px 5px var(--grey-200);
+  }
+}
