@@ -1,5 +1,4 @@
 const buttonMenu = document.getElementById("button-menu");
-const divMenu = document.getElementById("menu-nav-links");
 const body = document.querySelector("body");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");

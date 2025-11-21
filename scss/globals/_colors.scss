@@ -8,7 +8,7 @@
   --blue-050: rgb(246, 250, 255);
   --gradient-1: linear-gradient(var(--white), var(--grey-200));
 
-  --text-color: --white;
+  --text-color: var(--white);
 }
 
 .bg-black {
