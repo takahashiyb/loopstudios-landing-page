@@ -24,28 +24,18 @@
     <link rel="stylesheet" href="./dist/style.css" />
   </head>
   <body>
-    <section class="hero">
-      <div class="grid grid__hero-section">
-        <div class="grid__hero-image">
-          <picture>
-            <source
-              media="(min-width:1023px)"
-              srcset="./images/desktop/image-hero.jpg"
-            />
-            <img src="./images/mobile/image-hero.jpg" alt="" />
-          </picture>
-        </div>
-        <section class="navigation">
-          <div class="grid__navigation">
-            <div class="grid__logo">
+    <dialog>
+      <div id="menu-nav-links-overlay">
+        <section class="bg-black menu">
+          <div class="grid grid__menu">
+            <div class="grid__menu-logo">
               <img src="../images/logo.svg" alt="logo company" />
-
-              <button class="button__menu">
-                <img src="../images/icon-hamburger.svg" alt="" />
+              <button id="button-close-menu" class="button-close-menu">
+                <img src="../images/icon-close.svg" alt="icon close" />
               </button>
             </div>
 
-            <div role="navigation" class="nav-links grid__navbar">
+            <div role="menu" class="menu-links grid__menubar">
               <a href="#about">ABOUT</a>
               <a href="#careers">CAREERS</a>
               <a href="#events">EVENTS</a>
@@ -54,154 +44,191 @@
             </div>
           </div>
         </section>
-        <div class="grid__hero-text">
-          <h1 class="hero-text">Immersive experiences that deliver</h1>
-        </div>
       </div>
-    </section>
+    </dialog>
+    <main>
+      <section class="hero">
+        <div class="grid grid__hero-section">
+          <div class="grid__hero-image">
+            <picture>
+              <source
+                media="(min-width:1023px)"
+                srcset="./images/desktop/image-hero.jpg"
+              />
+              <img src="./images/mobile/image-hero.jpg" alt="" />
+            </picture>
+          </div>
+          <section class="navigation">
+            <div class="grid__navigation">
+              <div class="grid__nav-logo">
+                <img src="../images/logo.svg" alt="logo company" />
 
-    <section class="company-history">
-      <div class="grid grid__company-history">
-        <div class="image">
-          <picture>
-            <source
-              srcset="./images/desktop/image-interactive.jpg"
-              media="(min-width: 767px)"
-            />
-            <img
-              src="./images/mobile/image-interactive.jpg"
-              alt="image of someone having fun playing vr"
-            />
-          </picture>
-        </div>
-        <div class="text-content">
-          <h2>The leader in interactive VR</h2>
-          <p>
-            Founded in 2011, Loopstudios has been producing world-class virtual
-            reality projects for some of the best companies around the globe.
-            Our award-winning creations have transformed businesses through
-            digital experiences that bind to their brand.
-          </p>
-        </div>
-      </div>
-    </section>
+                <button id="button-menu" class="button__menu">
+                  <img src="../images/icon-hamburger.svg" alt="" />
+                </button>
+              </div>
 
-    <section class="company-products">
-      <div class="grid grid__company-products">
-        <header>
-          <div class="header">
-            <h2>Our creations</h2>
+              <div role="navigation" class="nav-links grid__navbar">
+                <a href="#about">ABOUT</a>
+                <a href="#careers">CAREERS</a>
+                <a href="#events">EVENTS</a>
+                <a href="#products">PRODUCTS</a>
+                <a href="#support">SUPPORT</a>
+              </div>
+            </div>
+          </section>
+          <div class="grid__hero-text">
+            <h1 class="hero-text">Immersive experiences that deliver</h1>
           </div>
-        </header>
+        </div>
+      </section>
 
-        <div class="grid__product-listing product-listing">
-          <div class="card">
+      <section class="company-history">
+        <div class="grid grid__company-history">
+          <div class="image">
             <picture>
               <source
-                srcset="./images/desktop/image-deep-earth.jpg"
-                media="(min-width:1023px)"
+                srcset="./images/desktop/image-interactive.jpg"
+                media="(min-width: 767px)"
               />
               <img
-                src="./images/mobile/image-deep-earth.jpg"
-                alt="deep earth image"
+                src="./images/mobile/image-interactive.jpg"
+                alt="image of someone having fun playing vr"
               />
             </picture>
-            <p>deep earth</p>
           </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-night-arcade.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-night-arcade.jpg"
-                alt="Night arcade image"
-              />
-            </picture>
-            <p>Night arcade</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-soccer-team.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-soccer-team.jpg"
-                alt="Soccer team VR image"
-              />
-            </picture>
-            <p>Soccer team VR</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-grid.jpg"
-                media="(min-width:1023px)"
-              />
-              <img src="./images/mobile/image-grid.jpg" alt="The grid image" />
-            </picture>
-            <p>The grid</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-from-above.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-from-above.jpg"
-                alt="From up above VR image"
-              />
-            </picture>
-            <p>From up above VR</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-pocket-borealis.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-pocket-borealis.jpg"
-                alt="Pocket borealis image"
-              />
-            </picture>
-            <p>Pocket borealis</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-curiosity.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-curiosity.jpg"
-                alt="The curiosity image"
-              />
-            </picture>
-            <p>The curiosity</p>
-          </div>
-          <div class="card">
-            <picture>
-              <source
-                srcset="./images/desktop/image-fisheye.jpg"
-                media="(min-width:1023px)"
-              />
-              <img
-                src="./images/mobile/image-fisheye.jpg"
-                alt="Make it fisheye image"
-              />
-            </picture>
-            <p>Make it fisheye</p>
+          <div class="text-content">
+            <h2>The leader in interactive VR</h2>
+            <p>
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
           </div>
         </div>
-        <div class="see-all-button">
-          <button class="button__all-products">See all</button>
+      </section>
+
+      <section class="company-products">
+        <div class="grid grid__company-products">
+          <header>
+            <div class="header">
+              <h2>Our creations</h2>
+            </div>
+          </header>
+
+          <div class="grid__product-listing product-listing">
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-deep-earth.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-deep-earth.jpg"
+                  alt="deep earth image"
+                />
+              </picture>
+              <p>deep earth</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-night-arcade.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-night-arcade.jpg"
+                  alt="Night arcade image"
+                />
+              </picture>
+              <p>Night arcade</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-soccer-team.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-soccer-team.jpg"
+                  alt="Soccer team VR image"
+                />
+              </picture>
+              <p>Soccer team VR</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-grid.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-grid.jpg"
+                  alt="The grid image"
+                />
+              </picture>
+              <p>The grid</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-from-above.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-from-above.jpg"
+                  alt="From up above VR image"
+                />
+              </picture>
+              <p>From up above VR</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-pocket-borealis.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-pocket-borealis.jpg"
+                  alt="Pocket borealis image"
+                />
+              </picture>
+              <p>Pocket borealis</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-curiosity.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-curiosity.jpg"
+                  alt="The curiosity image"
+                />
+              </picture>
+              <p>The curiosity</p>
+            </div>
+            <div class="card">
+              <picture>
+                <source
+                  srcset="./images/desktop/image-fisheye.jpg"
+                  media="(min-width:1023px)"
+                />
+                <img
+                  src="./images/mobile/image-fisheye.jpg"
+                  alt="Make it fisheye image"
+                />
+              </picture>
+              <p>Make it fisheye</p>
+            </div>
+          </div>
+          <div class="see-all-button">
+            <button class="button__all-products">See all</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="bg-black">
       <div class="grid grid__footer">
@@ -234,5 +261,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/button-menu.js"></script>
   </body>
 </html>

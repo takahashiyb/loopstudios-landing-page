@@ -5,6 +5,11 @@ body {
   row-gap: calc(2 * var(--spacing-1000));
 }
 
+main {
+  display: grid;
+  row-gap: calc(2 * var(--spacing-1000));
+}
+
 .grid {
   --space-lr: 40px;
   --space-gap: 20px;
@@ -27,22 +32,6 @@ body {
 
   @include u.breakpoint(medium) {
     --space-lr: var(--spacing-1000);
-  }
-
-  &__menu {
-    height: 100dvh;
-    grid-template-rows: min-content 1fr 1fr;
-    align-items: end;
-  }
-
-  &__logo,
-  &__menubar {
-    grid-column: 2;
-    display: grid;
-  }
-
-  &__menubar {
-    gap: var(--spacing-0300);
   }
 
   &__footer {
@@ -149,13 +138,13 @@ body {
     }
   }
 
-  &__logo,
+  &__nav-logo,
   &__navbar {
     grid-column: 2;
     display: grid;
   }
 
-  &__logo {
+  &__nav-logo {
     grid-template-columns: repeat(2, min-content);
     justify-content: space-between;
     grid-column: 1;
@@ -292,6 +281,40 @@ body {
     @include u.breakpoint(large) {
       grid-template-columns: repeat(4, 1fr);
       gap: var(--spacing-0400);
+    }
+  }
+
+  &__menu {
+    height: 100dvh;
+    width: 100vw;
+    grid-template-rows: min-content repeat(2, 1fr);
+    align-items: end;
+    border: none;
+    padding-top: var(--spacing-0500);
+
+    @include u.breakpoint(medium) {
+      grid-template-rows: min-content repeat(3, 1fr);
+    }
+  }
+
+  &__menu-logo,
+  &__menubar {
+    grid-column: 2;
+    display: grid;
+  }
+
+  &__menu-logo {
+    grid-template-columns: repeat(2, min-content);
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__menubar {
+    grid-row: 2;
+    gap: var(--spacing-0300);
+
+    @include u.breakpoint(medium) {
+      grid-row: 3;
     }
   }
 }

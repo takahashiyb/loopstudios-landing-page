@@ -1,0 +1,14 @@
+dialog {
+  border: none; /* removes border completely */
+  padding: 0; /* removes default padding */
+  background: none; /* optional: remove background */
+}
+
+body.no-scroll {
+  overflow: hidden; /* disables scrolling */
+}
+
+.button-close-menu {
+  background-color: transparent;
+  border: none;
+}
